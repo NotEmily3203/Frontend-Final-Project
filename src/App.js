@@ -17,6 +17,7 @@ import {
 // components here
 // import EditStudentContainer from "./components/containers/EditStudentContainer";
 import NewCampusContainer from "./components/containers/NewCampusContainer";
+import EditCampusContainer from "./components/containers/EditCampusContainer";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route exact path="/campuses" component={AllCampusesContainer} />
         <Route exact path="/campus/:id" component={CampusContainer} />
         <Route exact path="/newcampus" component={NewCampusContainer} />
+        <Route exact path="/edit-campus" component={EditCampusContainer} />
         <Route exact path="/students" component={AllStudentsContainer} />
         <Route exact path="/newstudent" component={NewStudentContainer} />
         <Route exact path="/student/:id" component={StudentContainer} />
