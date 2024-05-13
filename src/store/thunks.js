@@ -4,7 +4,9 @@
 It contains all Thunk Creators and Thunks.
 ================================================== */
 import * as ac from './actions/actionCreators';  // Import Action Creators ("ac" keyword Action Creator)
-const axios = require('axios');
+import axios from 'axios';
+
+// const axios = require('axios');
 
 //All Campuses
 // THUNK CREATOR:
@@ -27,6 +29,21 @@ export const fetchCampusThunk = (id) => async (dispatch) => {  // The THUNK
     // API "get" call to get a student data (based on "id")from database
     let res = await axios.get(`/api/campuses/${id}`);  
     dispatch(ac.fetchCampus(res.data));
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+// Add Campus
+// THUNK CREATOR:
+export const addCampusThunk = (campus) => async (dispatch) => {  // The THUNK
+  try {
+    // API "post" call to add "student" object's data to database
+    let res = await axios.post(`/api/campuses`, campus);  
+    // Call Action Creator to return Action object (type + payload with new students data)
+    // Then dispatch the Action object to Reducer to update state 
+    dispatch(ac.addCampus(res.data));
+    return res.data;
   } catch(err) {
     console.error(err);
   }
