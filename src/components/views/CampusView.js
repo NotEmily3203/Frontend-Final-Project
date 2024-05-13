@@ -26,6 +26,10 @@ const CampusView = (props) => {
           </div>
         );
       })}
+
+      <Link to={`/edit-campus`}>
+        <button>Edit Campus Information</button>
+      </Link>
     </div>
   );
 };
