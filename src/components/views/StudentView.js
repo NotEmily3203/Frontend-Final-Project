@@ -13,8 +13,10 @@ const StudentView = (props) => {
   return (
     <div>
       <h1>{student.firstname + " " + student.lastname}</h1>
-      <h3>{student.campusId}</h3>
-
+      <img src={student.imageUrl}/>
+      <h3>Campus ID: {student.campusId}</h3>
+      <p>Email: {student.email}</p>
+      <p>GPA: {student.gpa}</p>
       <div>
         <Link to={`/edit-student`}>
           <button>Edit</button>
