@@ -20,7 +20,7 @@ class NewStudentContainer extends Component {
     this.state = {
       firstname: "", 
       lastname: "", 
-      imageURL: "",
+      imageUrl: "",
       campusId: null, 
       redirect: false, 
       redirectId: null
@@ -44,7 +44,7 @@ class NewStudentContainer extends Component {
         campusId: this.state.campusId,
         email: this.state.email,
         gpa: this.state.gpa,
-        imageURL: this.state.imageUrl,
+        imageUrl: this.state.imageUrl,
     };
     
     // Add new student in back-end database
@@ -55,7 +55,7 @@ class NewStudentContainer extends Component {
       firstname: "", 
       lastname: "", 
       email: "",
-      imageURL: "",
+      imageUrl: "",
       gpa: null,
       campusId: null, 
       redirect: true, 
