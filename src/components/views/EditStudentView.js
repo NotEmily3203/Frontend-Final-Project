@@ -38,7 +38,7 @@ const EditStudentView = (props) => {
   const {handleChange, handleSubmit, student} = props;
   const classes = useStyles();
 
-  // Render an Edit Student view with an input form
+  // Render a edit Student view with an input form
   return (
     <div>
       <h1>{student.firstname} {student.lastname}</h1>
@@ -67,7 +67,7 @@ const EditStudentView = (props) => {
             <br/>
 
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Profile Pic: </label>
-            <input type="text" name="imageURL" defaultValue = {student.imageURL} onChange={(e) => handleChange(e)} />
+            <input type="url" name="imageUrl" defaultValue = {student.imageUrl} onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
