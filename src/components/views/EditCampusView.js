@@ -61,8 +61,13 @@ const EditCampusView = (props) => {
             <br/>
             <br/>
 
+            <label style={{color:'#11153e', fontWeight: 'bold'}}>Description: </label>
+            <input type="text" name="description" defaultValue = {campus.description} onChange={(e) => handleChange(e)} />
+            <br/>
+            <br/>
+
             <label style={{color:'#11153e', fontWeight: 'bold'}}>Campus Pic: </label>
-            <input type="text" name="imageURL" defaultValue = {campus.imageURL} onChange={(e) => handleChange(e)} />
+            <input type="url" name="imageURL" defaultValue = {campus.imageUrl} onChange={(e) => handleChange(e)} />
             <br/>
             <br/>
 
