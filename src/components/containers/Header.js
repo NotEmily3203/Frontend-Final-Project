@@ -22,12 +22,13 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     textAlign: 'left',
     fontType: 'bold',
-    fontFamily: 'sans-serif', 
+    fontFamily: '-apple-system',
     fontSize: '35px', 
-    color: 'darkblue'
+    color: '#F0EBD8'
+    
   },
   appBar:{
-    backgroundColor: '#fcb6bb',
+    backgroundColor: '#152033',
     shadows: ['none'],
   },
   greeting:{
@@ -39,6 +40,10 @@ const useStyles = makeStyles(theme => ({
   },
   links:{
     textDecoration: 'none',
+  },
+  buttondeco:{
+    backgroundColor: '#1D2D44',
+    color: '#93A4B7'
   }
 }));
 
@@ -48,26 +53,26 @@ const Header = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar position="static" elevation={0} className={classes.appBar}>
+      <AppBar position="static" elevation={0} className={classes.appBar} style={{padding: '10px'}}>
         <Toolbar>
           <Typography variant="h6" className={classes.title} color="inherit" >
             Campus Management System
           </Typography>
 
           <Link className={classes.links} to={'/'} >
-            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+            <Button variant="contained" className={classes.buttondeco} style={{marginRight: '10px'}}>
               Home
             </Button>
           </Link>
 
           <Link className={classes.links} to={'/campuses'} >
-            <Button variant="contained" color="primary" style={{marginRight: '10px'}}>
+            <Button variant="contained" className={classes.buttondeco} style={{marginRight: '10px'}}>
               All Campuses
             </Button>
           </Link>
 
           <Link className={classes.links} to={'/students'} >
-            <Button variant="contained" color="primary">
+            <Button variant="contained" className={classes.buttondeco}>
               All Students
             </Button>
           </Link>

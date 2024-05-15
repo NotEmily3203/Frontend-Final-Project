@@ -6,7 +6,7 @@ It constructs a React component to display all campuses.
 ================================================== */
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
+import './AllCampusesView.css';
 const AllCampusesView = (props) => {
   // If there is no campus, display a message.
   if (!props.allCampuses.length) {
@@ -16,24 +16,29 @@ const AllCampusesView = (props) => {
   return (
     <div>
       <h1>All Campuses</h1>
-
-      {props.allCampuses.map((campus) => (
-        <div key={campus.id}>
-          <Link to={`/campus/${campus.id}`}>
-            <h2>{campus.name}</h2>
-          </Link>
-          <img src={campus.imageUrl}/>
-          <h4>campus id: {campus.id}</h4>
-          <p>{campus.address}</p>
-          <p>{campus.description}</p>
-          <hr/>
-        </div>
-      ))}
-      <br/>
-      <Link to={`/newcampus`}>
-        <button>Add New Campus</button>
-      </Link>
-      <br/><br/>
+      <div className="campus-list">
+        {props.allCampuses.map((campus) => (
+          <div key={campus.id} className="each-campus">
+            <div className="campus-header">
+            <Link to={`/campus/${campus.id}`}>
+              <h2>{campus.name}</h2>
+            </Link>
+            <h4>campus id: {campus.id}</h4>
+            </div>
+            
+            <img src={campus.imageUrl}/>
+            <p>Address: {campus.address}</p>
+            <p>{campus.description}</p>
+            
+          </div>
+        ))}
+      </div>
+      <div className="add-campus">
+        <h4>Can't Find Your Campus?</h4>
+        <Link to={`/newcampus`}>
+          <button>Add New Campus</button>
+        </Link>
+      </div>
     </div>
   );
 };
