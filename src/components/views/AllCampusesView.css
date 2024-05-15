@@ -1,0 +1,31 @@
+.campus-list{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    column-gap: 0.25rem;
+    row-gap: 0.25rem;
+}
+.each-campus{
+    flex: 1;
+    padding: 1.5rem;
+    background-color: #93A4B7;
+}
+.each-campus img{
+    width: 100%;
+    height: 60%;
+    object-fit:cover;
+}
+.campus-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.add-campus{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.add-campus h4{
+    margin:1rem;
+}

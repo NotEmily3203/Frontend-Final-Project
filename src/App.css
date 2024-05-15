@@ -1,5 +1,5 @@
 .App {
-  background-color: beige;
+  background-color: #D1D4CD;
   min-height: 100vh;
   text-align: center;
 }
@@ -7,4 +7,12 @@
 .App-link {
   color: #61dafb;
 }
-
+h2{
+  color: #0D1321;
+}
+h4{
+  color: #152033;
+}
+p{
+  color: #263951;
+}
