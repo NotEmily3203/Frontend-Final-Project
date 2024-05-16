@@ -12,9 +12,16 @@ const AllCampusesView = (props) => {
   if (!props.allCampuses.length) {
     return <div>There are no campuses.</div>;
   }
+  function placeholder(){
+    console.log("replace with function to delete campus");
+  }
   // If there is at least one campus, render All Campuses view 
   return (
     <div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <h1>All Campuses</h1>
       <div className="campus-list">
         {props.allCampuses.map((campus) => (
@@ -29,7 +36,7 @@ const AllCampusesView = (props) => {
             <img src={campus.imageUrl}/>
             <p>Address: {campus.address}</p>
             <p>{campus.description}</p>
-            
+            <button onClick={placeholder()}>Delete</button>
           </div>
         ))}
       </div>

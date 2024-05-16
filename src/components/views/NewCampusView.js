@@ -41,6 +41,10 @@ const NewCampusView = (props) => {
   // Render a New Campus view with an input form
   return (
     <div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <h1>New Campus</h1>
 
       <div className={classes.root}>

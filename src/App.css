@@ -16,3 +16,13 @@ h4{
 p{
   color: #263951;
 }
+button{
+  background-color: #1D2D44;
+  color: #93A4B7;
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+}
+button:hover{
+  cursor: pointer;
+}

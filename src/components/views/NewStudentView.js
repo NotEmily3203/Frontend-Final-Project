@@ -41,6 +41,10 @@ const NewStudentView = (props) => {
   // Render a New Student view with an input form
   return (
     <div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <h1>New Student</h1>
 
       <div className={classes.root}>
