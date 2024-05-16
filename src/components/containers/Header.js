@@ -53,7 +53,7 @@ const Header = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar position="static" elevation={0} className={classes.appBar} style={{padding: '10px'}}>
+      <AppBar elevation={0} className={classes.appBar} position="fixed" style={{padding: '10px', zIndex: 1}}>
         <Toolbar>
           <Typography variant="h6" className={classes.title} color="inherit" >
             Campus Management System

@@ -41,6 +41,11 @@ const EditStudentView = (props) => {
   // Render a edit Student view with an input form
   return (
     <div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <h1>{student.firstname} {student.lastname}</h1>
 
       <div className={classes.root}>
