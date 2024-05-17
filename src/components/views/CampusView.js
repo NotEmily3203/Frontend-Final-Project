@@ -29,7 +29,7 @@ const CampusView = (props) => {
           <h3>Campus ID: {campus.id}</h3>
           <p>Address: {campus.address}</p>
           <p>Description: {campus.description}</p>
-          
+          <button onClick={placeholder()}>Edit</button>
         </div>
       </div>
       <h1>List of Students</h1>
