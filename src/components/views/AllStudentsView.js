@@ -12,6 +12,11 @@ const AllStudentsView = (props) => {
   if (!students.length) {
     return (
     <div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <h1>All Students</h1>
       <p>There are no students.</p>
       <Link to={`newstudent`}>
         <button>Add New Student</button>
