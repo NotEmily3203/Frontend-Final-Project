@@ -30,6 +30,12 @@ const CampusView = (props) => {
           <p>Address: {campus.address}</p>
           <p>Description: {campus.description}</p>
           
+          <br/>
+          <div>
+            <Link to={`/edit-campus/${campus.id}`}>
+              <button>Edit</button>
+            </Link>
+          </div>
         </div>
       </div>
       <h1>List of Students</h1>
