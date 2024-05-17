@@ -8,13 +8,12 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import './AllCampusesView.css';
 const AllCampusesView = (props) => {
+  const {allCampuses, deleteCampus} = props
   // If there is no campus, display a message.
-  if (!props.allCampuses.length) {
+  if (!allCampuses.length) {
     return <div>There are no campuses.</div>;
   }
-  function placeholder(){
-    console.log("replace with function to delete campus");
-  }
+  
   // If there is at least one campus, render All Campuses view 
   return (
     <div>
@@ -24,7 +23,7 @@ const AllCampusesView = (props) => {
       <br/>
       <h1>All Campuses</h1>
       <div className="campus-list">
-        {props.allCampuses.map((campus) => (
+        {allCampuses.map((campus) => (
           <div key={campus.id} className="each-campus">
             <div className="campus-header">
             <Link to={`/campus/${campus.id}`}>
@@ -36,7 +35,7 @@ const AllCampusesView = (props) => {
             <img src={campus.imageUrl}/>
             <p>Address: {campus.address}</p>
             <p>{campus.description}</p>
-            <button onClick={placeholder()}>Delete</button>
+            <button onClick={() => deleteCampus(campus.id)}>Delete</button>
           </div>
         ))}
       </div>
