@@ -42,12 +42,15 @@ class EditCampusContainer extends Component {
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
+    //Default Picture
+    var originalUrl = "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGVnZSUyMGNhbXB1c3xlbnwwfHwwfHx8MA%3D%3D";
+
     let campus = {
         id: this.props.campus.id,
         name: this.state.name === "" ? this.props.campus.name : this.state.name,
         description: this.state.description === "" ? this.props.campus.description : this.state.description,
         address: this.state.address === "" ? this.props.campus.address : this.state.address,
-        imageUrl: this.state.imageUrl === "" ? this.props.campus.imageUrl : this.state.imageUrl,
+        imageUrl: this.state.imageUrl === "" ? originalUrl : this.state.imageUrl,
     };
     
     // Edit student in back-end database
