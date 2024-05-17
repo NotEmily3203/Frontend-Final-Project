@@ -29,6 +29,14 @@ export const addCampus= (campus) => {
   };
 };
 
+//Delete Campus
+export const deleteCampus = (campus) => {
+  return {
+    type: at.DELETE_CAMPUS,
+    payload: campus,
+  };
+};
+
 //Edit Campus
 export const editCampus = (campus) => {
   return {
