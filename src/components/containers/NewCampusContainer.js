@@ -21,7 +21,7 @@ class NewCampusContainer extends Component {
       name: "", 
       address: "", 
       description: "",
-      imageUrl: "",
+      imageUrl: this.props.imageUrl,
       redirect: false, 
       redirectId: null
     };
