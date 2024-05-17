@@ -10,7 +10,10 @@ import './AllCampusesView.css';
 const AllCampusesView = (props) => {
   // If there is no campus, display a message.
   if (!props.allCampuses.length) {
-    return <div>There are no campuses.</div>;
+    return <div><br/>
+    <br/>
+    <br/>
+    <br/>There are no campuses.</div>;
   }
   function placeholder(){
     console.log("replace with function to delete campus");
