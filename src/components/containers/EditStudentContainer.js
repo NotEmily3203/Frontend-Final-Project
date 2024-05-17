@@ -43,13 +43,15 @@ class EditStudentContainer extends Component {
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
 
+    //Default Picture
+    var originalUrl = "https://static.vecteezy.com/system/resources/thumbnails/001/840/618/small/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg";
     let student = {
         id: this.props.student.id,
         firstname: this.state.firstname === "" ? this.props.student.firstname : this.state.firstname,
         lastname: this.state.lastname === "" ? this.props.student.lastname : this.state.lastname,
         email: this.state.email === "" ? this.props.student.email : this.state.email,
         campusId: this.state.campusId === "" ? this.props.student.campusId : this.state.campusId,
-        imageUrl: this.state.imageUrl === "" ? this.props.student.imageUrl : this.state.imageUrl,
+        imageUrl: this.state.imageUrl === "" ? originalUrl : this.state.imageUrl,
         gpa: this.state.gpa === "" ? this.props.student.gpa : this.state.gpa
     };
     
