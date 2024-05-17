@@ -8,10 +8,7 @@ import { Link } from "react-router-dom";
 import './CampusView.css'
 // Take in props data to construct the component
 const CampusView = (props) => {
-  const {campus, deleteStudent} = props;
-  function placeholder(){
-    console.log("replace with appropriate function");
-  }
+  const {campus, editStudent} = props;
   // Render a single Campus view with list of its students
   return (
     <div>
@@ -51,7 +48,17 @@ const CampusView = (props) => {
               <h2>{name}</h2>
             </Link>   
                       
-            <button onClick={() => deleteStudent(student.id,campus.id)}>Delete Student</button>
+            <button onClick={() => {
+              let newstudent={
+                id: student.id,
+                firstname: student.firstname,
+                lastname: student.lastname,
+                email: student.email,
+                campusId: null,
+                imageUrl: student.imageUrl,
+                gpa: student.gpa
+              }
+              editStudent(newstudent,campus.id)}}>Unenroll Student</button>
           </div>
         );
       })}

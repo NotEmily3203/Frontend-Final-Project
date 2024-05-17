@@ -8,7 +8,7 @@ If needed, it also defines the component's "connect" function.
 import Header from './Header';
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchCampusThunk , deleteStudentThunk} from "../../store/thunks";
+import { fetchCampusThunk , editStudentThunk} from "../../store/thunks";
 
 import { CampusView } from "../views";
 
@@ -25,7 +25,7 @@ class CampusContainer extends Component {
       <div>
         <Header />
         <CampusView campus={this.props.campus}
-          deleteStudent={this.props.deleteStudent}    />
+          editStudent={this.props.editStudent}    />
       </div>
     );
   }
@@ -44,8 +44,8 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
-    deleteStudent: (studentId, campusId) => {
-        dispatch(deleteStudentThunk(studentId)).then(() => {
+    editStudent: (student, campusId) => {
+        dispatch(editStudentThunk(student)).then(() => {
         dispatch(fetchCampusThunk(campusId));
       });
     }
@@ -54,5 +54,5 @@ const mapDispatch = (dispatch) => {
 
 // Export store-connected container by default
 // CampusContainer uses "connect" function to connect to Redux Store and to read values from the Store 
-// (and re-read the values when the Store State updates).
+// (and re-read the values when the Store State edits).
 export default connect(mapState, mapDispatch)(CampusContainer);
