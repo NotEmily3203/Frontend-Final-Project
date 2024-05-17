@@ -8,8 +8,7 @@ import { Link } from "react-router-dom";
 import './CampusView.css'
 // Take in props data to construct the component
 const CampusView = (props) => {
-  const {campus} = props;
-  
+  const {campus, deleteStudent} = props;
   function placeholder(){
     console.log("replace with appropriate function");
   }
@@ -39,7 +38,9 @@ const CampusView = (props) => {
         </div>
       </div>
       <h1>List of Students</h1>
-      <button onClick={placeholder()}>Add Student</button>
+      <Link to={`/newstudent`}>
+      <button>Add Student</button>
+      </Link>
       { (!campus.students.length) ?
         <div><p>There are no students enrolled in this campus :C</p><br></br></div>
         :
@@ -49,8 +50,9 @@ const CampusView = (props) => {
           <div key={student.id} className="students">
             <Link to={`/student/${student.id}`}>
               <h2>{name}</h2>
-            </Link>             
-            <button onClick={placeholder()}>Delete Student</button>
+            </Link>   
+                      
+            <button onClick={() => deleteStudent(student.id,campus.id)}>Delete Student</button>
           </div>
         );
       })}
