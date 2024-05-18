@@ -18,11 +18,12 @@ class EditStudentContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      firstname: "", 
-      lastname: "", 
-      imageUrl: "",
-      gpa: this.props.gpa,
-      campusId: this.props.campusId, 
+      firstname: this.props.student.firstname, 
+      lastname: this.props.student.lastname, 
+      email: this.props.student.email,
+      imageUrl: this.props.student.imageUrl,
+      gpa: this.props.student.gpa,
+      campusId: this.props.student.campusId, 
       redirect: false, 
       redirectId: null
     };
@@ -42,17 +43,18 @@ class EditStudentContainer extends Component {
   // Take action after user click the submit button
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
+    console.log(this.state.imageUrl);
 
     //Default Picture
     var originalUrl = "https://static.vecteezy.com/system/resources/thumbnails/001/840/618/small/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg";
     let student = {
         id: this.props.student.id,
-        firstname: this.state.firstname === "" ? this.props.student.firstname : this.state.firstname,
-        lastname: this.state.lastname === "" ? this.props.student.lastname : this.state.lastname,
-        email: this.state.email === "" ? this.props.student.email : this.state.email,
-        campusId: this.state.campusId === "" ? this.props.student.campusId : this.state.campusId,
+        firstname: this.state.firstname,
+        lastname: this.state.lastname,
+        email: this.state.email ,
+        campusId: this.state.campusId,
         imageUrl: this.state.imageUrl === "" ? originalUrl : this.state.imageUrl,
-        gpa: this.state.gpa === "" ? this.props.student.gpa : this.state.gpa
+        gpa: this.state.gpa === "" ? null : this.state.gpa
     };
     
     // Edit student in back-end database
