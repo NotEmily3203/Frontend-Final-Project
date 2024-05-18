@@ -52,7 +52,7 @@ class EditStudentContainer extends Component {
         firstname: this.state.firstname,
         lastname: this.state.lastname,
         email: this.state.email ,
-        campusId: this.state.campusId,
+        campusId: this.state.campusId === "" ? null : this.state.campusId,
         imageUrl: this.state.imageUrl === "" ? originalUrl : this.state.imageUrl,
         gpa: this.state.gpa === "" ? null : this.state.gpa
     };
